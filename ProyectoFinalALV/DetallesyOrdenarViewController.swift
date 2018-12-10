@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DetallesyOrdenarViewController: UIViewController {
 
@@ -25,6 +26,38 @@ class DetallesyOrdenarViewController: UIViewController {
     
     @IBAction func clickPedirBtn(_ sender: Any) {
         print(sucursal)
+        var ref: DocumentReference!
+        let db = Firestore.firestore()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let fecha = formatter.string(from: Date())
+        
+        ref = db.collection("pedidos").addDocument(data: [
+            "titulo": rtitle ?? "Titulo",
+            "img": rimg ?? "ImagenURL",
+            "ingredientes": ringredients ?? "Ingredientes",
+            "fecha": fecha,
+            "destino":[
+                "lat": 19.72239,
+                "long": -101.185485
+            ],
+            "origen": sucursal,
+            "progreso":[
+                "status": "iniciado" ,
+                "valor": 10,
+                "ubicacion":[
+                    "lat": 19.72239,
+                    "long": -101.185485
+                ]
+            ]
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
     }
     
     override func viewDidLoad() {

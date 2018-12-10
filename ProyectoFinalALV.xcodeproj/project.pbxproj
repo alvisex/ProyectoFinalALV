@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183ED7F621BE69DF00255120 /* PedidosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183ED7F521BE69DF00255120 /* PedidosTableViewController.swift */; };
+		183ED7F821BE7C4B00255120 /* StatusPedidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183ED7F721BE7C4B00255120 /* StatusPedidoViewController.swift */; };
 		18CF8DFC21BCE1A200B66425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF8DFB21BCE1A200B66425 /* AppDelegate.swift */; };
 		18CF8DFE21BCE1A200B66425 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF8DFD21BCE1A200B66425 /* ViewController.swift */; };
 		18CF8E0121BCE1A200B66425 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CF8DFF21BCE1A200B66425 /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		0BABD1631387F9CC95F2F2CC /* Pods-ProyectoFinalALV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoFinalALV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProyectoFinalALV/Pods-ProyectoFinalALV.debug.xcconfig"; sourceTree = "<group>"; };
+		183ED7F521BE69DF00255120 /* PedidosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosTableViewController.swift; sourceTree = "<group>"; };
+		183ED7F721BE7C4B00255120 /* StatusPedidoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPedidoViewController.swift; sourceTree = "<group>"; };
 		18CF8DF821BCE1A200B66425 /* ProyectoFinalALV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoFinalALV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CF8DFB21BCE1A200B66425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18CF8DFD21BCE1A200B66425 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,8 +127,10 @@
 				18E9FB6821BE279100F22CCA /* GoogleService-Info.plist */,
 				18E9FB6121BDE81800F22CCA /* Base */,
 				18CF8DFD21BCE1A200B66425 /* ViewController.swift */,
+				183ED7F721BE7C4B00255120 /* StatusPedidoViewController.swift */,
 				18CF8DFF21BCE1A200B66425 /* Main.storyboard */,
 				18E9FB6421BE124800F22CCA /* DetallesyOrdenarViewController.swift */,
+				183ED7F521BE69DF00255120 /* PedidosTableViewController.swift */,
 				18E9FB6221BDF71A00F22CCA /* RecipeTableVCTableViewController.swift */,
 			);
 			path = ProyectoFinalALV;
@@ -444,9 +450,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183ED7F621BE69DF00255120 /* PedidosTableViewController.swift in Sources */,
 				18E9FB6521BE124800F22CCA /* DetallesyOrdenarViewController.swift in Sources */,
 				18CF8DFE21BCE1A200B66425 /* ViewController.swift in Sources */,
 				18E9FB6321BDF71A00F22CCA /* RecipeTableVCTableViewController.swift in Sources */,
+				183ED7F821BE7C4B00255120 /* StatusPedidoViewController.swift in Sources */,
 				18CF8DFC21BCE1A200B66425 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
