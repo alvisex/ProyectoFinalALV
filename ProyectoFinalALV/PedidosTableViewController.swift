@@ -132,6 +132,8 @@ class PedidosTableViewController: UITableViewController {
             
             if let index = tableView.indexPathForSelectedRow?.row {
                 detailPedido.idPedido = (pedidos[index]["idd"] as! String)
+                detailPedido.origenPedido = (pedidos[index]["origen"] as! String)
+                detailPedido.destinoPedido = (pedidos[index]["destino"] as! String)
             } else {
                 return
             }

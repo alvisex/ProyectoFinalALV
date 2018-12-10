@@ -11,6 +11,7 @@ import UIKit
 class RecipeTableVCTableViewController: UITableViewController {
 
     var recipes: [Recipe] = []
+    var busquedaa: String?
     
     struct webJson: Decodable {
         let results: [Recipe]
@@ -33,8 +34,8 @@ class RecipeTableVCTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        let busqueda = "apple"
-        let jsonURL = "http://www.recipepuppy.com/api/?q=\(busqueda)"
+        
+        let jsonURL = "http://www.recipepuppy.com/api/?q=\(busquedaa!)"
         
         guard let url = URL(string: jsonURL) else { return }
         
