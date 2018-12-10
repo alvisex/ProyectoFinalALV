@@ -144,10 +144,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JCU-Lj-txb">
-                                <rect key="frame" x="16" y="221" width="343" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UQj-Nm-7c8"/>
@@ -155,10 +151,8 @@
                     <navigationItem key="navigationItem" id="TWx-nw-p22"/>
                     <connections>
                         <outlet property="mapView" destination="ibt-aa-PuX" id="1Js-Ep-bbM"/>
-                        <outlet property="statusProgresB" destination="6wM-rQ-QQ0" id="TWp-xy-p2f"/>
                         <outlet property="txtIdPedido" destination="6l2-Bt-Me0" id="Lg8-u4-xSL"/>
                         <outlet property="txtStatus" destination="N4q-VS-b4q" id="s1w-ZL-ah6"/>
-                        <outlet property="view" destination="N4q-VS-b4q" id="Sky-9Y-3O4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CL0-99-scr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -298,6 +292,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JkU-mH-Et7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f38-QX-Y7r">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

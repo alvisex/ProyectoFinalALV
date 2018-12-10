@@ -26,56 +26,43 @@ class StatusPedidoViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var txtIdPedido: UILabel!
     @IBOutlet weak var txtStatus: UILabel!
-    @IBOutlet var statusProgresB: UIView!
+ 
     
     var idPedido: String?
     var origenPedido: String?
     var destinoPedido: String?
-    
-    var ubicaciones: [Ubicacion] = []
-    
-    struct Ubicacion {
-        let nombre: String
-        let lat: Double
-        let long: Double
-        init(nom: String, lat: Double, long: Double) {
-            self.nombre = nom
-            self.lat = lat
-            self.long = long
-        }
-    }
+    var status: String?
+    var progreso: Float?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let db = Firestore.firestore()
+        txtIdPedido.text = self.idPedido!
+        txtStatus.text = self.status!
+        //progresStatus.setProgress(progreso!, animated: true)
+        
+        // let db = Firestore.firestore()
 
-        ubicaciones.append(Ubicacion(nom: "Tec", lat: 19.72239, long: -101.185485))
-        ubicaciones.append(Ubicacion(nom: "Camelinas", lat: 19.682621, long: -101.159651))
-        ubicaciones.append(Ubicacion(nom: "Matriz", lat: 19.697988, long: -101.180227))
-        ubicaciones.append(Ubicacion(nom: "Centro", lat: 19.702392, long: -101.193664))
+        let direccionOrigen = origenPedido!.split(separator: " ")
+        let direccionDestino = destinoPedido!.split(separator: " ")
         
-        var sourceLocation: CLLocationCoordinate2D?
-        var destinationLocation: CLLocationCoordinate2D?
-        var sourcePin : customPin?
-        var destinationPin: customPin?
+        let oLat = Double(direccionOrigen[0])
+        let oLong = Double(direccionOrigen[1])
         
-        for u in self.ubicaciones{
-            if u.nombre == origenPedido {
-                sourceLocation = CLLocationCoordinate2DMake(u.lat, u.long)
-                sourcePin = customPin(pintitle: u.nombre, pinSubtitle: "Sucursal", location: sourceLocation!)
-            }
-            if u.nombre == destinoPedido {
-                destinationLocation = CLLocationCoordinate2DMake(u.lat, u.long)
-                destinationPin = customPin(pintitle: u.nombre, pinSubtitle: "Destino", location: destinationLocation!)
-            }
-        }
+        let dLat = Double(direccionDestino[0])
+        let dLong = Double(direccionDestino[1])
         
-        self.mapView.addAnnotation(sourcePin!)
-        self.mapView.addAnnotation(destinationPin!)
+        let sourceLocation = CLLocationCoordinate2D(latitude: oLat!, longitude: oLong!)
+        let destinationLocation = CLLocationCoordinate2D(latitude: dLat!, longitude: dLong!)
+        let sourcePin = customPin(pintitle: "Sucursal", pinSubtitle: "Pro", location: sourceLocation)
+        let destinationPin = customPin(pintitle: "Tec", pinSubtitle: "Pro", location: destinationLocation)
         
-        let sourcePlaceMark = MKPlacemark(coordinate: sourceLocation!)
-        let destinationPlaceMark = MKPlacemark(coordinate: destinationLocation!)
+        
+        self.mapView.addAnnotation(sourcePin)
+        self.mapView.addAnnotation(destinationPin)
+        
+        let sourcePlaceMark = MKPlacemark(coordinate: sourceLocation)
+        let destinationPlaceMark = MKPlacemark(coordinate: destinationLocation)
         
         let directionReq = MKDirections.Request()
         directionReq.source = MKMapItem(placemark: sourcePlaceMark)
@@ -106,5 +93,6 @@ class StatusPedidoViewController: UIViewController, MKMapViewDelegate {
         renderer.lineWidth = 4.5
         return renderer
     }
+ 
 
 }

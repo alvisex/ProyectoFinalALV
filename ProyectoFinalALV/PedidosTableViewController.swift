@@ -134,6 +134,8 @@ class PedidosTableViewController: UITableViewController {
                 detailPedido.idPedido = (pedidos[index]["idd"] as! String)
                 detailPedido.origenPedido = (pedidos[index]["origen"] as! String)
                 detailPedido.destinoPedido = (pedidos[index]["destino"] as! String)
+                detailPedido.status = (pedidos[index]["status"] as! String)
+                detailPedido.progreso = 0.1 //Float(pedidos[index]["valor"] as! String)
             } else {
                 return
             }
