@@ -38,10 +38,7 @@ class DetallesyOrdenarViewController: UIViewController {
             "img": rimg ?? "ImagenURL",
             "ingredientes": ringredients ?? "Ingredientes",
             "fecha": fecha,
-            "destino":[
-                "lat": 19.72239,
-                "long": -101.185485
-            ],
+            "destino":"Tec",
             "origen": sucursal,
             "progreso":[
                 "status": "iniciado" ,

@@ -128,7 +128,7 @@ class PedidosTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "statusSegue" {
-            let detailPedido = segue.destination as! ViewController
+            let detailPedido = segue.destination as! StatusPedidoViewController
             
             if let index = tableView.indexPathForSelectedRow?.row {
                 detailPedido.idPedido = (pedidos[index]["idd"] as! String)
